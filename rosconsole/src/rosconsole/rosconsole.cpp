@@ -655,10 +655,10 @@ void print(FilterBase* filter, void* logger_handle, Level level,
 void print(FilterBase* filter, void* logger_handle, Level level, 
 	   const std::stringstream& ss, const char* file, int line, const char* function)
 {
-  std::chrono::high_resolution_clock::time_point start, stop;
-  double time_span;
-  // std::cout<<"minos encryption out here :%s"<<msg<<std::endl;
-  start = std::chrono::high_resolution_clock::now();
+  // std::chrono::high_resolution_clock::time_point start, stop;
+  // double time_span;
+  // // std::cout<<"minos encryption out here :%s"<<msg<<std::endl;
+  // start = std::chrono::high_resolution_clock::now();
   if (g_shutting_down)
     return;
 
@@ -711,12 +711,12 @@ void print(FilterBase* filter, void* logger_handle, Level level,
 
   g_printing_thread_id = boost::thread::id();
 
-  stop = std::chrono::high_resolution_clock::now();
+  // stop = std::chrono::high_resolution_clock::now();
 
-  time_span = std::chrono::duration_cast<std::chrono::duration<double>>(
-                                                      stop - start).count();
-  printf("Flushing2 the log statements to disk took an additional "
-              "%lf secs\r\n", time_span);
+  // time_span = std::chrono::duration_cast<std::chrono::duration<double>>(
+  //                                                     stop - start).count();
+  // printf("Flushing2 the log statements to disk took an additional "
+  //             "%lf secs\r\n", time_span);
 }
 
 typedef std::vector<LogLocation*> V_LogLocation;
